@@ -238,7 +238,8 @@ class Account extends User_Controller {
 		$this->data['error'] = false;
 		$message = '';
 
-		if (VBX_User::authenticate($user, $old_pw))
+		// we allow admin to set other users passwords
+		if ($is_admin || VBX_User::authenticate($user, $old_pw))
 		{
 			try {
 				$user->set_password($new_pw, $new_pw2);
