@@ -87,11 +87,6 @@ var Client = {
 				Client.cancel(conn);
 			});
 			
-			Twilio.Device.presence(function(event) {
-				Client.log('event: presence');
-				Client.handleEvent(event);
-			});
-		
 			$('#dialer #client-ui-actions button').hide();
 		}
 		catch (e) {
