@@ -5,7 +5,7 @@
 	"url": "https://github.com/kernworks",
 	"version": "0.1",
 	"links" : [{
-		"menu" : "Call Log",
+		"menu" : "admin",
 		"url" : "recording",
 		"script" : "recording.php",
 		"label" : "Recorded Calls"
