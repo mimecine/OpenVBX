@@ -352,6 +352,7 @@ class Twiml extends MY_Controller {
 			$options = array(
 				'action' => site_url("twiml/dial_status").'?'.http_build_query(compact('to')),
 				'callerId' => $callerid,
+				'record' => 'record-from-ringing',
 				'timeout' => $this->vbx_settings->get('dial_timeout', $this->tenant->id)
 			);
 			
