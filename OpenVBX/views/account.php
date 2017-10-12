@@ -99,6 +99,10 @@
 	<div class="hide error-message"></div>
 	<fieldset class="vbx-input-container">
 		<label class="field-label">Old Password
+			<br/>
+			<?php if ($current_user->is_admin && $user->id != $current_user->id): ?>
+			<small>Leave blank if you're resetting another user's password</small>
+			<?php endif; ?>
 			<input type="password" class="medium" name="old_pw" />
 		</label>
 		<label class="field-label">New Password
