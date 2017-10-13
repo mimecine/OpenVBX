@@ -84,6 +84,10 @@ Message.Detail = {
 	}
 };
 
+audiojs.events.ready(function() {
+    var as = audiojs.createAll();
+  });
+
 Message.Player = {
 	getRecordingUrls : function(afterFetch) {
 		if(Message.Player.messageIdsToRecordingURLs) {
