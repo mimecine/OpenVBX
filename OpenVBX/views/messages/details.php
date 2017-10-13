@@ -89,26 +89,7 @@
 				<tbody>
 					<tr>
 						<td>
-							<a id="play-<?php echo $id ?>" href="<?php echo site_url("messages/details/$id") ?>" class="playback-button play quick-play">
-								<span class="replace">Play</span>
-								<span class="call-duration"><?php echo $recording_length ?></span>
-							</a>
-						</td>
-						<td id="player-<?php echo $id ?>" class="player" style="display: none; width: 100%">
-							<table style="width: 100%">
-								<tr>
-									<td style="width: 100%">
-										<div id="player-bar-<?php echo $id?>" class="player-bar">
-											<div id="load-bar-<?php echo $id?>" class="load-bar">
-												<div id="play-bar-<?php echo $id?>" class="play-bar"></div>
-											</div>
-										</div>
-									</td>
-									<td>
-										<div class="play-time"><img src="<?php echo asset_url('assets/i/ajax-loader.gif')?>" alt="..." /></div>
-									</td>
-								</tr>
-							</table>
+							<audio src="<?php echo $recording_url ?>" preload="auto" ></audio>
 						</td>
 					</tr>
 				</tbody>

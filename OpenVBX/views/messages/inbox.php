@@ -69,10 +69,15 @@
 					</td>
 					<td class="message-playback">
 						<?php if($item['type'] != 'sms'): ?>
-						<a id="play-<?php echo $item['id'] ?>" href="<?php echo site_url("messages/details/{$item['id']}") ?>" class="play playback-button quick-play">
-							<span class="replace">Play</span>
-							<span class="call-duration"><?php echo $item['recording_length'] ?></span>
-						</a>
+						<style>
+							.audiojs>.scrubber, .audiojs>.time {
+								display: none;
+							}
+							.audiojs {
+								width: 38px;
+							}
+						</style>
+						<audio src="<?php echo $item['recording_url'] ?>" preload="auto" ></audio>
 						<?php endif; ?>
 					</td>
 					<td class="message-content message-details-link">
