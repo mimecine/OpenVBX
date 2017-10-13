@@ -1,6 +1,6 @@
 # Docker
 
-Docker allows you to run OpenVBX easily in a containerized environment, eliminating the need for you to insteall Apach, Mysql, and PHP on your local development machine.  If you're unfamiliar with how docker works, [check it out](https://www.docker.com/get-docker)!
+Docker allows you to run OpenVBX easily in a containerized environment, eliminating the need for you to install Apache, Mysql, and PHP on your local development machine.  If you're unfamiliar with how docker works, [check it out](https://www.docker.com/get-docker)!
 
 ### Prerequisites
 
