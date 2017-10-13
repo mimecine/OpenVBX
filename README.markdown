@@ -13,11 +13,11 @@ for more information on what Twilio considers a valid certificate.
 
 # Install
 
-Please see [INSTALL.markdown](https://github.com/twilio/OpenVBX/blob/master/INSTALL.markdown)
+Please see [INSTALL.markdown](https://github.com/chartspan/OpenVBX/blob/master/INSTALL.markdown)
 
 # Working with Docker
 
-If you're interested in running this application with docker - see the [Docker.md](docker.md) documentation
+If you're interested in running this application with docker - see the [Docker](https://github.com/chartspan/OpenVBX/blob/master/DOCKER.md) documentation
 
 # Bug Reporting Guidelines
 
