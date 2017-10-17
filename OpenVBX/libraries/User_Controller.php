@@ -372,7 +372,7 @@ class User_Controller extends MY_Controller
 		try
 		{
 			/* Retrieve twilio numbers w/o sandbox */
-			$numbers = $this->vbx_incoming_numbers->get_numbers();
+			$numbers = $this->vbx_incoming_numbers->get_user_numbers();
 		}
 		catch(VBX_IncomingNumberException $e)
 		{

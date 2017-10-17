@@ -35,6 +35,30 @@ class VBX_Incoming_numbers extends Model
 		parent::__construct();
 	}
 
+	public function get_user_numbers() {
+		
+		if (!OpenVBX::isAdmin()) {
+			$flow_numbers = array();
+			$current_user = OpenVBX::getCurrentUser();
+			$account = OpenVBX::getAccount();
+			$search_opts = array();
+			$search_opts["name__like_after"] = $current_user->first_name.' '.$current_user->last_name;
+			$incoming_flows = VBX_Flow::search($search_opts);
+			foreach ($incoming_flows as $flow) {
+				foreach ($flow->numbers as $flow_number) {
+					$flow_number = $account->incoming_phone_numbers->getNumber($flow_number);
+					$flow_numbers[] = $this->parseIncomingPhoneNumber($flow_number);
+				}
+				
+			}
+			$incoming_numbers = $flow_numbers;
+		} else {
+			return self::get_numbers();
+		}
+		return $incoming_numbers;
+	
+	}
+
 	public function get_numbers($retrieve_sandbox = 'deprecated')
 	{		
 		$ci =& get_instance();
