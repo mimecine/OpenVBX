@@ -3,6 +3,7 @@ services:
   php:
     build: .
     restart: always
+    user: www-data
     ports:
       - "80:80"
     volumes:
