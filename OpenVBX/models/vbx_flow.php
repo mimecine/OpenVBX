@@ -114,6 +114,10 @@ class VBX_Flow extends MY_Model {
 								$limit,
 								$offset);
 
+		if (count($flows) == 0) {
+			return array();
+		}
+
 		if(is_object($flows))
 		{
 			$flows = array($flows);
