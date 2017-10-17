@@ -1,0 +1,14 @@
+{
+  "name": "Recording",
+  "author": "Shawn Kern",
+  "description": "Applets for handeling call recording.",
+	"url": "https://github.com/kernworks",
+	"version": "0.1",
+	"links" : [{
+		"menu" : "admin",
+		"url" : "recording",
+		"script" : "recording.php",
+		"label" : "Recorded Calls"
+	}]
+
+}
