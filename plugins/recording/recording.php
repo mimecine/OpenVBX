@@ -12,9 +12,13 @@ $service = new Services_Twilio($ci->twilio_sid, $ci->twilio_token);
 if ($cache = $ci->api_cache->get($cache_key, $recordings_class, $ci->tenant->id)) {
 	$recordings =& $cache;
 } else {
-	$recordings = $service->account->recordings;
+	$recordings = $service->account->recordings->recent();
 	//Set a 5 minute cache on recordings
 	$ci->api_cache->set($cache_key, $recordings, $recordings_class, $ci->tenant->id, 300);
+}
+
+foreach($recordings as $recording) {
+	$recording->uri = str_replace(".json", "", $recording);
 }
 
 $recording_host = $ci->vbx_settings->get('recording_host', $ci->tenant->id);
