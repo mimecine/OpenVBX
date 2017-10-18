@@ -18,7 +18,7 @@ if ($cache = $ci->api_cache->get($cache_key, $recordings_class, $ci->tenant->id)
 }
 
 foreach($recordings as $recording) {
-	$recording->uri = str_replace(".json", "", $recording);
+	$recording->uri = str_replace(".json", "", $recording->uri);
 }
 
 $recording_host = $ci->vbx_settings->get('recording_host', $ci->tenant->id);
