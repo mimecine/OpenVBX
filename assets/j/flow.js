@@ -487,7 +487,8 @@ Flows.events = {
 				}
 			});
 			
-			if($('input', event.target).attr('value').length > 0) {
+			var inputValue = $('input', event.target).attr('value');
+			if(inputValue && inputValue.length > 0) {
 				return $('#dialog-replace-applet').dialog('open');
 			}
 			
