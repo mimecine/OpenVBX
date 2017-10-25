@@ -39,7 +39,7 @@ class AudioSpeechPickerWidget extends AppletUIWidget
 		$this->mode = $mode;
 		$this->say_value = $say_value;
 		$this->play_value = $play_value;
-		$this->tag = $tag;
+		$this->tag = 'global';
 		
 		parent::__construct($this->template);
 	}
