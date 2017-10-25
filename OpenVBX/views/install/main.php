@@ -9,7 +9,7 @@
 	</script>
 	<?php $this->load->view('js-init'); ?>
 <?php if ($this->config->item('use_unminimized_js')): ?>
-	<script type="text/javascript" src="<?php echo base_url() ?>assets/j/frameworks/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url() ?>assets/j/frameworks/jquery-1.7.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url() ?>assets/j/plugins/jquery.validate.js"></script>
 	<script type="text/javascript" src="<?php echo base_url() ?>assets/j/steps.js"></script>
 	<script type="text/javascript" src="<?php echo base_url() ?>assets/j/install.js"></script>

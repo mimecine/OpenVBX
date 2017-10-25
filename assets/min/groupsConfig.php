@@ -9,7 +9,7 @@
  * changes. http://yourdomain/min/builder/
  **/
 
-$jquery = '../j/frameworks/jquery-1.6.2.min.js';
+$jquery = '../j/frameworks/jquery-1.7.min.js';
 $jquery_ui = '../j/frameworks/jquery-ui-1.8.14.custom.min.js';
 $jquery_cookie = '../j/plugins/jquery.cookie.js';
 $jquery_validate = '../j/plugins/jquery.validate.js';

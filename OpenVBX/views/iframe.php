@@ -8,7 +8,7 @@
 	<meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
 	<link rel="stylesheet" href="<?php echo asset_url('assets/c/iframe.css'); ?>" type="text/css" media="screen" />
 <?php if ($this->config->item('use_unminimized_js')): ?>
-	<script type="text/javascript" src="<?php echo asset_url('assets/j/frameworks/jquery-1.6.2.min.js'); ?>"></script>
+	<script type="text/javascript" src="<?php echo asset_url('assets/j/frameworks/jquery-1.7.min.js'); ?>"></script>
 	<script type="text/javascript" src="<?php echo asset_url('assets/j/frameworks/jquery-ui-1.8.14.custom.min.js'); ?>"></script>
 	<script type="text/javascript" src="<?php echo asset_url('assets/j/plugins/jquery.cookie.js'); ?>"></script>
 	<script type="text/javascript" src="<?php echo asset_url('assets/j/iframe.js'); ?>"></script>
