@@ -1,0 +1,14 @@
+{
+  "name": "User List",
+  "author": "Chartspan",
+  "description": "A pk / username map display page",
+	"url": "https://github.com/chartspan/OpenVBX",
+	"version": "0.1",
+	"links" : [{
+		"menu" : "admin",
+		"url" : "userlist",
+		"script" : "userlist.php",
+		"label" : "User List"
+	}]
+
+}
