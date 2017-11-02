@@ -26,6 +26,7 @@ class VBX_GroupException extends Exception {}
  * @property int $id
  * @property string $name
  * @property int $is_active
+ * @property string $timeout
  */
 class VBX_Group extends MY_Model {
 
@@ -37,7 +38,8 @@ class VBX_Group extends MY_Model {
 	public $fields =  array(
 						'id', 
 						'name', 
-						'is_active'
+						'is_active',
+						'timeout'
 					);
 	
 	public $admin_fields = array('');
@@ -262,6 +264,10 @@ class VBX_Group extends MY_Model {
 
 	public function save()
 	{
+		if(strlen($this->timeout) > 3) {
+			throw new VBX_GroupException('Group call timeout can not exceed 999 minutes');
+		}
+
 		if(strlen($this->name) < 3)
 		{
 			throw new VBX_GroupException('Group name must be at least 3 characters long');

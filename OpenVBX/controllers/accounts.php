@@ -475,6 +475,7 @@ class Accounts extends User_Controller {
 	{
 		$id = intval($this->input->post('id'));
 		$name = $this->input->post('name');
+		$timeout = $this->input->post('timeout');
 		$error = false;
 		$message = '';
 
@@ -506,6 +507,7 @@ class Accounts extends User_Controller {
 			try
 			{
 				$group->name = $name;
+				$group->timeout = $timeout;
 				$group->save();
 			}
 			catch(VBX_GroupException $e)
@@ -518,6 +520,7 @@ class Accounts extends User_Controller {
 		$json = array('name' => $group->name,
 					  'id' => $group->id,
 					  'error' => $error,
+					  'timeout' => $timeout,
 					  'message' => $message);
 
 		$data['json'] = $json;
