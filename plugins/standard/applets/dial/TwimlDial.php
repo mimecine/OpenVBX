@@ -31,7 +31,7 @@ class TwimlDial {
 	 */
 	public $dial;
 	
-	protected $timeout = false;
+	public $timeout = false;
 	protected $transcribe = true;
 	protected $voice = 'man';
 	protected $language = 'en';
