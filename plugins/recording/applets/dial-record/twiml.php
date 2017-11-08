@@ -7,7 +7,7 @@ $CI->load->library('DialList');
 $transcribe = (bool) $CI->vbx_settings->get('transcriptions', $CI->tenant->id);
 $voice = $CI->vbx_settings->get('voice', $CI->tenant->id);
 $language = $CI->vbx_settings->get('voice_language', $CI->tenant->id);
-$timeout = $CI->vbx_settings->get('timeout', $CI->tenant->id);
+$timeout = $CI->vbx_settings->get('dial_timeout', $CI->tenant->id);
 
 switch(AppletInstance::getValue('recording-enable', 'no')) {
 	case 'yes':
