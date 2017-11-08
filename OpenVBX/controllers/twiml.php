@@ -353,7 +353,7 @@ class Twiml extends MY_Controller {
 				'action' => site_url("twiml/dial_status").'?'.http_build_query(compact('to')),
 				'callerId' => $callerid,
 				'record' => 'record-from-ringing',
-				'timeout' => $this->vbx_settings->get('dial_timeout', $this->tenant->id)
+				'timeout' => $this->vbx_settings->get('dial_timeout', $this->tenant->id)  # Group timeouts should not affect outgoing dials
 			);
 			
 			if($record !== false)

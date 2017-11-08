@@ -7,10 +7,7 @@ $CI->load->library('DialList');
 $transcribe = (bool) $CI->vbx_settings->get('transcriptions', $CI->tenant->id);
 $voice = $CI->vbx_settings->get('voice', $CI->tenant->id);
 $language = $CI->vbx_settings->get('voice_language', $CI->tenant->id);
-
-// Set the timeout dynamically from the user when 
-$user = OpenVBX::getCurrentUser();
-$timeout = $user->get_call_timeout();
+$timeout = $CI->vbx_settings->get('timeout', $CI->tenant->id);
 
 switch(AppletInstance::getValue('recording-enable', 'no')) {
 	case 'yes':
@@ -82,8 +79,10 @@ try {
 				{
 					$to_dial = $dial_list->next();
 
-					$dial_user = VBX_User::get($to_dial->user_id);
-					$timeout = $dial_user->get_call_timeout();
+					if ($to_dial->user_id != null) {
+						$dial_user = VBX_User::get($to_dial->user_id);
+						$timeout = $dial_user->get_call_timeout();
+					}
 					$dialer->timeout = $timeout;
 
 					if ($to_dial instanceof VBX_Device) 
