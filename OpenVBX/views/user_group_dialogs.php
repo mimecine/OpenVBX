@@ -50,6 +50,10 @@
 			<label class="field-label" for="iGroup">Group Name
 				<input type="text" id="iGroup" class="medium" name="name" />
 			</label>
+			<label class="field-label" for="iTimeout">Group Call Timeout<br/>
+				<small>Leave empty to use global default</small>
+				<input type="text" id="iTimeout" class="medium" name="timeout" />
+			</label>
 		</fieldset>
 	</form>
 </div>

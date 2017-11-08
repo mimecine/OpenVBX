@@ -39,7 +39,7 @@ $sources = array(
 		'../c/client.css',
 	),
 	'js' => array(
-		'../audioPlayer/audio.min.js',
+		'../j/audioPlayer/audio.min.js',
 		'../j/soundmanager2/soundmanager2.js',
 		$jquery,
 		$jquery_ui,

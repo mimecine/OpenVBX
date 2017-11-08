@@ -781,4 +781,43 @@ class VBX_User extends MY_Model {
 
 		return $settings[$key]->save();
 	}
+
+	/**
+	 * Dynamically calculate caller's timeout
+	 * Will look in a caller's groups for a timeout defined.
+	 * If none are found, default to site wide configuration
+	 * If multiple groups have a timeout defined, default to site wide configuration
+	 *
+	 * @return int
+	 */
+	public function get_call_timeout() {
+		$ci =& get_instance();
+		$timeout = $ci->vbx_settings->get('dial_timeout', $ci->tenant->id);
+		
+		$group_ids = VBX_User::get_group_ids($this->id);
+		if (count($group_ids) == 0) {
+			# User is not in a group - stop calculating
+			return $timeout;
+		}
+
+		$groups = VBX_Group::search(array('id__in' => $group_ids));
+		$groups_with_timeout = array();
+		foreach ($groups as $group) {
+			if ($group->timeout != '') {
+				if (count($groups_with_timeout) >= 1) {
+					# User is in multiple groups with timeout - return system global
+					return $timeout;
+				}
+				array_push($groups_with_timeout, $group);
+			}
+		}
+		if (count($groups_with_timeout) > 0) {
+			# User is in 1 group with timeout, set retval to its timeout
+			$timeout = current($groups_with_timeout)->timeout;
+		}
+
+		# Return the single group timeout if only in 1 group w/ timeout
+		# Or return system global configured timeout
+		return $timeout;
+	}
 }

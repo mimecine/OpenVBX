@@ -2,17 +2,20 @@ first:
     id: 
     name: 
     is_active: 
+    timeout:
     tenant_id: 
 
 second:
     id: 
     name: 
     is_active: 
+    timeout:
     tenant_id: 
 
 third:
     id: 
     name: 
     is_active: 
+    timeout:
     tenant_id: 
 

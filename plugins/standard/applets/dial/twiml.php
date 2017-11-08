@@ -54,6 +54,13 @@ try {
 				while (count($dial_list)) 
 				{
 					$to_dial = $dial_list->next();
+
+					if ($to_dial->user_id != null) {
+						$dial_user = VBX_User::get($to_dial->user_id);
+						$timeout = $dial_user->get_call_timeout();
+					}
+					$dialer->timeout = $timeout;
+
 					if ($to_dial instanceof VBX_Device) 
 					{
 						$dialed = $dialer->dial($to_dial);

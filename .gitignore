@@ -9,3 +9,5 @@ memcache.php
 .idea
 /nbproject/*
 _site
+compiled/
+.DS_Store

@@ -1,5 +1,5 @@
 audioPlayer/audio.min.js
-soundmanager2/soundmanager2.js
+soundmanager2/soundmanager2-jsmin.js
 frameworks/jquery-1.6.2.min.js
 frameworks/jquery-ui-1.8.14.custom.min.js
 swfupload/swfupload.js
@@ -22,4 +22,3 @@ global.js
 sound.js
 pickers.js
 messages.js
-update-check.js
