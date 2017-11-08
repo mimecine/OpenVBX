@@ -264,8 +264,8 @@ class VBX_Group extends MY_Model {
 
 	public function save()
 	{
-		if(strlen($this->timeout) > 3) {
-			throw new VBX_GroupException('Group call timeout can not exceed 999 minutes');
+		if(intval($this->timeout) > 600) {
+			throw new VBX_GroupException('Group call timeout can not exceed 600 seconds');
 		}
 
 		if(strlen($this->name) < 3)
